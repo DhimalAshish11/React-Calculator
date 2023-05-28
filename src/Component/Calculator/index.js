@@ -125,6 +125,7 @@ export const Calculator = () => {
       setLastOperator(val);
       return;
     }
+    //implementation of dot
 
     if (val === ".") {
       if (lastOperator) {

@@ -126,6 +126,20 @@ export const Calculator = () => {
       return;
     }
 
+    if (val === ".") {
+      if (lastOperator) {
+        const operatorIndex = displayValue.lastIndexOf(lastOperator);
+        const numbeAfterLastOperator = displayValue.slice(operatorIndex);
+
+        if (numbeAfterLastOperator.includes(".")) {
+          return;
+        }
+      }
+      if (!lastOperator && displayValue.includes(".")) {
+        return;
+      }
+    }
+
     setDisplayValue(displayValue + val);
   };
 
